@@ -30,13 +30,17 @@ public class AppCommandRunner implements CommandLineRunner {
         int opcion;
         Scanner scanner = new Scanner(System.in);
         do {
-            log.info("""
-                    
-                    Equipos 1
-                    Estadisticas 2
-                    Jugadores 3
-                    Partidos 4
+            System.out.println("""
+                                        
+                    Ingresar la opcion para ver el contenido de las tablas
+                                        
+                    1 - Equipos
+                    2 - Estadisticas
+                    3 - Jugadores
+                    4 - Partidos
+                                        
                     salir 0
+                                        
                     """);
             opcion = scanner.nextInt();
 
