@@ -1,10 +1,9 @@
--- #creamos la base de datos
---
--- CREATE DATABASE IF NOT EXISTS nba;
+-- DROP schema if exists NBA;
+
+-- CREATE schema IF NOT EXISTS NBA;
 --
 -- #seleccionar la base de datos
 -- USE nba;
-
 
 CREATE TABLE IF NOT EXISTS equipos
 (
@@ -28,18 +27,6 @@ CREATE TABLE IF NOT EXISTS jugadores
     FOREIGN KEY (Nombre_equipo) References equipos (Nombre)
 );
 
-CREATE TABLE IF NOT EXISTS estadisticas
-(
-    temporada               varchar(5) NOT NULL,
-    jugador                 int        NOT NULL,
-    Puntos_por_partido      float DEFAULT NULL,
-    Asistencias_por_partido float DEFAULT NULL,
-    Tapones_por_partido     float DEFAULT NULL,
-    Rebotes_por_partido     float DEFAULT NULL,
-    PRIMARY KEY (temporada, jugador),
-    FOREIGN KEY (jugador) REFERENCES Jugadores (Codigo)
-);
-
 CREATE TABLE IF NOT EXISTS partidos
 (
     codigo           int NOT NULL,
@@ -51,5 +38,17 @@ CREATE TABLE IF NOT EXISTS partidos
     PRIMARY KEY (codigo),
     FOREIGN KEY (equipo_local) REFERENCES equipos (nombre),
     FOREIGN KEY (equipo_visitante) REFERENCES equipos (nombre)
+);
+
+CREATE TABLE IF NOT EXISTS estadisticas
+(
+    temporada               varchar(5) NOT NULL,
+    jugador                 int        NOT NULL,
+    Puntos_por_partido      float DEFAULT NULL,
+    Asistencias_por_partido float DEFAULT NULL,
+    Tapones_por_partido     float DEFAULT NULL,
+    Rebotes_por_partido     float DEFAULT NULL,
+    PRIMARY KEY (temporada, jugador),
+    FOREIGN KEY (jugador) REFERENCES Jugadores (Codigo)
 );
 

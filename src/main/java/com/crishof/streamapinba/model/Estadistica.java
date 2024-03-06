@@ -15,6 +15,7 @@ public class Estadistica {
     @Id
     private String temporada;
     @OneToOne
+    @JoinColumn(name = "jugador")
     private Jugador jugador;
     @Column(name = "puntos_por_partido")
     private float puntosPorPartido;

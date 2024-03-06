@@ -1080,7 +1080,8 @@ INSERT INTO estadisticas
 VALUES ('05/06', 442, 2.3, 0.1, 0.2, 2.3);
 INSERT INTO estadisticas
 VALUES ('00/01', 443, 7.4, 1.4, 1.4, 5.8);
-INSERT INTO estadisticas
+INSERT INTO estadisticas (temporada, jugador, Puntos_por_partido, Asistencias_por_partido, Tapones_por_partido,
+                          Rebotes_por_partido)
 VALUES ('06/07', 442, 2, 0.1, 0.1, 2);
 INSERT INTO estadisticas
 VALUES ('99/00', 443, 8, 0.9, 0.7, 6.4);
